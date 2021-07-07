@@ -22,7 +22,7 @@ cd network
 ./cc.sh instantiate v1.0
 
 # -prototype
-cd ../prototype
+cd ../application
 
 ## 4. nodejs module install
 npm install
