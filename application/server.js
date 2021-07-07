@@ -41,7 +41,7 @@ async function cc_call(fn_name, args){
     const gateway = new Gateway();
     await gateway.connect(ccp, { wallet, identity: 'user1', discovery: { enabled: false } });
     const network = await gateway.getNetwork('mychannel');
-    const contract = network.getContract('teamate');
+    const contract = network.getContract('newcloth');
 
     var result;
     
@@ -115,7 +115,7 @@ app.post('/donate/:cid', async (req,res)=>{
     const gateway = new Gateway();
     await gateway.connect(ccp, { wallet, identity: 'user1', discovery: { enabled: false } });
     const network = await gateway.getNetwork('mychannel');
-    const contract = network.getContract('teamate');
+    const contract = network.getContract('newcloth');
     const result = await contract.evaluateTransaction('readDonate', cid);
     const myobj = JSON.parse(result)
     res.status(200).json(myobj)
