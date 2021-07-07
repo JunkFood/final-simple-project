@@ -45,17 +45,17 @@ async function cc_call(fn_name, args){
 
     var result;
     
-    if(fn_name == 'addUser'){
+    if(fn_name == 'addDonate'){
         cid = args[0]
         cissue = args[1]
 
-        result = await contract.submitTransaction('addUser', cid, cissue);
+        result = await contract.submitTransaction('addDonate', cid, cissue);
     }
-    else if( fn_name == 'addRating')
+    else if( fn_name == 'changeState')
     {
         cid = args[0]
         cstate = args[1]
-        result = await contract.submitTransaction('addRating', cid, cstate);
+        result = await contract.submitTransaction('changeState', cid, cstate);
     }
     else if(fn_name == 'readRating')
         result = await contract.evaluateTransaction('readRating', args);
@@ -75,7 +75,7 @@ app.post('/donate', async(req, res)=>{
 
     var args = [cid, cissue]
 
-    result = cc_call('addUser', args)
+    result = cc_call('addDonate', args)
 
     const myobj = {result: "success"}
     res.status(200).json(myobj) 
@@ -91,7 +91,7 @@ app.post('/state', async(req, res)=>{
 
     var args = [cid, cstate]
 
-    result = cc_call('addRating', args)
+    result = cc_call('changeState', args)
 
     const myobj = {result: "success"}
     res.status(200).json(myobj) 
@@ -116,7 +116,7 @@ app.post('/donate/:cid', async (req,res)=>{
     await gateway.connect(ccp, { wallet, identity: 'user1', discovery: { enabled: false } });
     const network = await gateway.getNetwork('mychannel');
     const contract = network.getContract('teamate');
-    const result = await contract.evaluateTransaction('readRating', cid);
+    const result = await contract.evaluateTransaction('readDonate', cid);
     const myobj = JSON.parse(result)
     res.status(200).json(myobj)
     // res.status(200).json(result)
