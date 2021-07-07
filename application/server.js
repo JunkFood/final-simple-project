@@ -97,66 +97,6 @@ app.post('/state', async(req, res)=>{
     res.status(200).json(myobj) 
 })
 
-// app.post('/state2', async(req, res)=>{
-//     const cid = req.body.cid;
-//     const cstate = req.body.cstate
-
-//     console.log("change state cid: " + cid);
-//     console.log("change state cstate: " + cstate);
-
-//     var args = [cid, cstate]
-
-//     result = cc_call('addRating', args)
-
-//     const myobj = {result: "success"}
-//     res.status(200).json(myobj) 
-// })
-
-// app.post('/state3', async(req, res)=>{
-//     const cid = req.body.cid;
-//     const cstate = req.body.cstate
-
-//     console.log("change state cid: " + cid);
-//     console.log("change state cstate: " + cstate);
-
-//     var args = [cid, cstate]
-
-//     result = cc_call('addRating', args)
-
-//     const myobj = {result: "success"}
-//     res.status(200).json(myobj) 
-// })
-
-// app.post('/state4', async(req, res)=>{
-//     const cid = req.body.cid;
-//     const cstate = req.body.cstate
-
-//     console.log("change state cid: " + cid);
-//     console.log("change state cstate: " + cstate);
-
-//     var args = [cid, cstate]
-
-//     result = cc_call('addRating', args)
-
-//     const myobj = {result: "success"}
-//     res.status(200).json(myobj) 
-// })
-
-// app.post('/state5', async(req, res)=>{
-//     const cid = req.body.cid;
-//     const cstate = req.body.cstate
-
-//     console.log("change state cid: " + cid);
-//     console.log("change state cstate: " + cstate);
-
-//     var args = [cid, cstate]
-
-//     result = cc_call('addRating', args)
-
-//     const myobj = {result: "success"}
-//     res.status(200).json(myobj) 
-// })
-
 // find mate
 app.post('/mate/:cid', async (req,res)=>{
     const cid = req.body.cid;
