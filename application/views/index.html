@@ -170,7 +170,7 @@
     
     $("#find-btn").click(()=>{
         const value = $("#find-cid").val();
-        const url = "/mate/" + value
+        const url = "/donate/" + value
         $.post(url, {cid: value}, (data)=>{
             // 조회했을 때 값이 null이 아니면 (일치하는 값이 존재한다면)
             if(status != null){
