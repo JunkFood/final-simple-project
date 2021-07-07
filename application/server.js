@@ -98,7 +98,7 @@ app.post('/state', async(req, res)=>{
 })
 
 // find mate
-app.post('/mate/:cid', async (req,res)=>{
+app.post('/donate/:cid', async (req,res)=>{
     const cid = req.body.cid;
     console.log("cid: " + req.body.cid);
     const walletPath = path.join(process.cwd(), 'wallet');
